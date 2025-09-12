@@ -1,0 +1,69 @@
+{
+  "name": "braidarr",
+  "version": "0.0.1",
+  "private": true,
+  "description": "AI-powered media management and automation platform",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:web\"",
+    "dev:web": "pnpm --filter @braidarr/web dev",
+    "dev:server": "pnpm --filter @braidarr/server dev",
+    "build": "pnpm --recursive run build",
+    "build:web": "pnpm --filter @braidarr/web build",
+    "build:server": "pnpm --filter @braidarr/server build",
+    "test": "pnpm --recursive run test",
+    "test:watch": "pnpm --recursive run test:watch",
+    "lint": "pnpm --recursive run lint",
+    "lint:fix": "pnpm --recursive run lint:fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "type-check": "pnpm --recursive run type-check",
+    "clean": "pnpm --recursive run clean && rm -rf node_modules",
+    "install:all": "pnpm install",
+    "start": "pnpm --filter @braidarr/server start",
+    "docker:build": "docker build -t braidarr .",
+    "docker:dev": "docker-compose up --build",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [
+    "media-management",
+    "plex",
+    "automation",
+    "ai",
+    "monorepo"
+  ],
+  "author": "Braidarr Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodingButter/braidarr.git"
+  }
+}

@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    ports:
+      - "3401:3401"
+    environment:
+      - NODE_ENV=production
+      - PORT=3401
+      - HOST=0.0.0.0
+      - CORS_ORIGINS=http://localhost
+    # depends_on:
+    #   - postgres
+    #   - redis
+    restart: unless-stopped
+
+  # Uncomment when database is needed
+  # postgres:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     POSTGRES_DB: braidarr
+  #     POSTGRES_USER: braidarr
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+  # redis:
+  #   image: redis:7-alpine
+  #   volumes:
+  #     - redis_data:/data
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

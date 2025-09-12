@@ -1,17 +1,17 @@
 # Braidarr
 
-A self-hosted list aggregator for the *Arr ecosystem that intelligently combines and deduplicates media from multiple sources.
+A self-hosted list aggregator for the \*Arr ecosystem that intelligently combines and deduplicates media from multiple sources.
 
 ## Overview
 
-Braidarr is a powerful tool that connects to Plex servers and custom JSON sources to create unified, deduplicated media lists for Radarr and Sonarr. It serves as a central hub for managing your media discovery and import lists, ensuring your *Arr applications stay synchronized with your media preferences.
+Braidarr is a powerful tool that connects to Plex servers and custom JSON sources to create unified, deduplicated media lists for Radarr and Sonarr. It serves as a central hub for managing your media discovery and import lists, ensuring your \*Arr applications stay synchronized with your media preferences.
 
 ## Key Features
 
 - **Plex Integration**: PIN-based authentication with automatic library discovery
 - **Custom Sources**: Support for any JSON-based media list with flexible mapping
 - **Smart Deduplication**: Intelligent media matching using TMDb, TVDb, and IMDb IDs
-- ***Arr Compatible**: Native integration with Radarr v5.x and Sonarr v4.x
+- **\*Arr Compatible**: Native integration with Radarr v5.x and Sonarr v4.x
 - **Performance Optimized**: Handle 50,000+ items with sub-5 second response times
 - **Docker Ready**: Multi-architecture support (amd64/arm64) with simple deployment
 - **Secure by Design**: Argon2id password hashing, JWT sessions, rate limiting
@@ -25,6 +25,7 @@ Follow our progress on the [GitHub Project Board](https://github.com/[username]/
 ## Architecture
 
 Braidarr is built with modern technologies:
+
 - **Backend**: Node.js with TypeScript
 - **Frontend**: React/Vue SPA
 - **Database**: SQLite with WAL mode
@@ -46,25 +47,28 @@ docker run -d \
 
 ## Documentation
 
-- [Installation Guide](docs/installation.md) *(coming soon)*
-- [Configuration](docs/configuration.md) *(coming soon)*
-- [API Documentation](docs/api.md) *(coming soon)*
-- [Development Setup](docs/development.md) *(coming soon)*
+- [Installation Guide](docs/installation.md) _(coming soon)_
+- [Configuration](docs/configuration.md) _(coming soon)_
+- [API Documentation](docs/api.md) _(coming soon)_
+- [Development Setup](docs/development.md) _(coming soon)_
 
 ## Development Roadmap
 
 ### Phase 1: Core Infrastructure (Sprint 1-2)
+
 - ✅ Project setup and repository initialization
 - ⏳ Authentication system
 - ⏳ Plex integration
 - ⏳ Custom source mapping
 
 ### Phase 2: Export & Integration (Sprint 2-3)
+
 - ⏳ Export endpoints
 - ⏳ Radarr/Sonarr connectors
 - ⏳ Deduplication engine
 
 ### Phase 3: Operations & Polish (Sprint 3-4)
+
 - ⏳ Job scheduling
 - ⏳ Docker packaging
 - ⏳ Documentation
@@ -72,11 +76,12 @@ docker run -d \
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) *(coming soon)* for details.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) _(coming soon)_ for details.
 
 ### Development Team
 
 This project is being developed by a dedicated team of specialized agents:
+
 - **Project Manager**: Sprint planning and coordination
 - **Lead Developer**: Technical leadership and architecture
 - **Full-Stack Developer**: Core application development
@@ -94,7 +99,7 @@ This project is being developed by a dedicated team of specialized agents:
 
 ## Acknowledgments
 
-Built to complement the amazing *Arr ecosystem including Radarr, Sonarr, and Plex.
+Built to complement the amazing \*Arr ecosystem including Radarr, Sonarr, and Plex.
 
 ---
 

@@ -1,0 +1,26 @@
+# Development Dockerfile
+FROM node:20-alpine AS base
+RUN npm install -g pnpm@8.15.0
+WORKDIR /app
+
+# Copy package files
+COPY package.json pnpm-lock.yaml* ./
+COPY packages/shared/package.json ./packages/shared/
+COPY packages/config/package.json ./packages/config/
+COPY packages/server/package.json ./packages/server/
+COPY packages/web/package.json ./packages/web/
+
+# Install all dependencies
+RUN pnpm install
+
+# Web development
+FROM base AS web-dev
+COPY . .
+EXPOSE 3400
+CMD ["pnpm", "--filter", "@braidarr/web", "dev"]
+
+# Server development
+FROM base AS server-dev
+COPY . .
+EXPOSE 3401
+CMD ["pnpm", "--filter", "@braidarr/server", "dev"]

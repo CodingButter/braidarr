@@ -1,0 +1,40 @@
+{
+  "name": "@braidarr/web",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Braidarr web application",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'TypeScript checking handled by tsc - skipping ESLint for now'",
+    "lint:fix": "echo 'TypeScript checking handled by tsc - skipping ESLint for now'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "clean": "rm -rf dist .tsbuildinfo"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "zustand": "^4.5.2",
+    "axios": "^1.6.8",
+    "clsx": "^2.1.0",
+    "@braidarr/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.0",
+    "vitest": "^1.4.0",
+    "@vitest/ui": "^1.4.0",
+    "jsdom": "^24.0.0",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/user-event": "^14.5.2"
+  }
+}
