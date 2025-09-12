@@ -1,0 +1,39 @@
+{
+  "name": "@braidarr/shared",
+  "version": "0.0.1",
+  "description": "Shared types, utilities, and constants for Braidarr",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && tsc --emitDeclarationOnly",
+    "build:watch": "tsup --watch",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'TypeScript checking handled by tsc - skipping ESLint for now'",
+    "lint:fix": "echo 'TypeScript checking handled by tsc - skipping ESLint for now'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist .tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "tsup": "^8.0.2",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
