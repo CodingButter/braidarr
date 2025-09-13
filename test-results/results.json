@@ -1,0 +1,2302 @@
+{
+  "config": {
+    "configFile": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/playwright.config.ts",
+    "rootDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/home/codingbutter/GitHub/braidarr/worktrees/issue-7-test-plans/test/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 16,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.e2e.test.ts",
+      "file": "auth.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication E2E Tests",
+          "file": "auth.e2e.test.ts",
+          "line": 13,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "User Registration Flow",
+              "file": "auth.e2e.test.ts",
+              "line": 39,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should complete full registration process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-2e3a7410d7044b4c3ae7",
+                  "file": "auth.e2e.test.ts",
+                  "line": 40,
+                  "column": 9
+                },
+                {
+                  "title": "should show validation errors for invalid input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-3b749f862c5e4f56fc06",
+                  "file": "auth.e2e.test.ts",
+                  "line": 73,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent duplicate email registration",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-be18a00816c9c2925299",
+                  "file": "auth.e2e.test.ts",
+                  "line": 95,
+                  "column": 9
+                },
+                {
+                  "title": "should validate password confirmation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-be1ea8ae8ccc021122e9",
+                  "file": "auth.e2e.test.ts",
+                  "line": 109,
+                  "column": 9
+                },
+                {
+                  "title": "should complete full registration process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-d2df0a911ac1c4c7be23",
+                  "file": "auth.e2e.test.ts",
+                  "line": 40,
+                  "column": 9
+                },
+                {
+                  "title": "should show validation errors for invalid input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-09be5813b4ea5747edff",
+                  "file": "auth.e2e.test.ts",
+                  "line": 73,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent duplicate email registration",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-d203c21df924e6ff3c68",
+                  "file": "auth.e2e.test.ts",
+                  "line": 95,
+                  "column": 9
+                },
+                {
+                  "title": "should validate password confirmation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a5e537452c15e186d864",
+                  "file": "auth.e2e.test.ts",
+                  "line": 109,
+                  "column": 9
+                },
+                {
+                  "title": "should complete full registration process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-1fe419903e228a7a7895",
+                  "file": "auth.e2e.test.ts",
+                  "line": 40,
+                  "column": 9
+                },
+                {
+                  "title": "should show validation errors for invalid input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4821deb93a056d266daa",
+                  "file": "auth.e2e.test.ts",
+                  "line": 73,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent duplicate email registration",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c8612524ef1e78a0d02f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 95,
+                  "column": 9
+                },
+                {
+                  "title": "should validate password confirmation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-cbf2e91cfc29c1e09775",
+                  "file": "auth.e2e.test.ts",
+                  "line": 109,
+                  "column": 9
+                },
+                {
+                  "title": "should complete full registration process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-3c3b9e1cfc62ef97b95f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 40,
+                  "column": 9
+                },
+                {
+                  "title": "should show validation errors for invalid input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-f20dbf23d2dfe8555e8b",
+                  "file": "auth.e2e.test.ts",
+                  "line": 73,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent duplicate email registration",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-3b7ccdcc70611c8fba97",
+                  "file": "auth.e2e.test.ts",
+                  "line": 95,
+                  "column": 9
+                },
+                {
+                  "title": "should validate password confirmation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-18c8cf43970ad332f95e",
+                  "file": "auth.e2e.test.ts",
+                  "line": 109,
+                  "column": 9
+                },
+                {
+                  "title": "should complete full registration process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-bba4e69f7f80e046e463",
+                  "file": "auth.e2e.test.ts",
+                  "line": 40,
+                  "column": 9
+                },
+                {
+                  "title": "should show validation errors for invalid input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-64b965cc808adb370750",
+                  "file": "auth.e2e.test.ts",
+                  "line": 73,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent duplicate email registration",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-50d405438ec95c763f04",
+                  "file": "auth.e2e.test.ts",
+                  "line": 95,
+                  "column": 9
+                },
+                {
+                  "title": "should validate password confirmation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-8793d684b2f9cb0bf776",
+                  "file": "auth.e2e.test.ts",
+                  "line": 109,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "User Login Flow",
+              "file": "auth.e2e.test.ts",
+              "line": 123,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should login with valid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-05d2217cc096fa702e7c",
+                  "file": "auth.e2e.test.ts",
+                  "line": 124,
+                  "column": 9
+                },
+                {
+                  "title": "should show error for invalid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-f0708b6048b900505972",
+                  "file": "auth.e2e.test.ts",
+                  "line": 142,
+                  "column": 9
+                },
+                {
+                  "title": "should handle \"Remember Me\" functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4b78876716571fca7b80",
+                  "file": "auth.e2e.test.ts",
+                  "line": 157,
+                  "column": 9
+                },
+                {
+                  "title": "should redirect to login for protected routes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7a69debbf6bc8908b7ff",
+                  "file": "auth.e2e.test.ts",
+                  "line": 179,
+                  "column": 9
+                },
+                {
+                  "title": "should login with valid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4229141808e922075381",
+                  "file": "auth.e2e.test.ts",
+                  "line": 124,
+                  "column": 9
+                },
+                {
+                  "title": "should show error for invalid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7dfaa98280318d817806",
+                  "file": "auth.e2e.test.ts",
+                  "line": 142,
+                  "column": 9
+                },
+                {
+                  "title": "should handle \"Remember Me\" functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c52323db71c62fbdc558",
+                  "file": "auth.e2e.test.ts",
+                  "line": 157,
+                  "column": 9
+                },
+                {
+                  "title": "should redirect to login for protected routes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-9223c4e5b1510e81482d",
+                  "file": "auth.e2e.test.ts",
+                  "line": 179,
+                  "column": 9
+                },
+                {
+                  "title": "should login with valid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-8dab3d85259e8880a89c",
+                  "file": "auth.e2e.test.ts",
+                  "line": 124,
+                  "column": 9
+                },
+                {
+                  "title": "should show error for invalid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-2212833a842a0141a653",
+                  "file": "auth.e2e.test.ts",
+                  "line": 142,
+                  "column": 9
+                },
+                {
+                  "title": "should handle \"Remember Me\" functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4fbd5f80960a5abd4baf",
+                  "file": "auth.e2e.test.ts",
+                  "line": 157,
+                  "column": 9
+                },
+                {
+                  "title": "should redirect to login for protected routes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-db6caf5b25ed4304376b",
+                  "file": "auth.e2e.test.ts",
+                  "line": 179,
+                  "column": 9
+                },
+                {
+                  "title": "should login with valid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-3e00ed23d8c585640323",
+                  "file": "auth.e2e.test.ts",
+                  "line": 124,
+                  "column": 9
+                },
+                {
+                  "title": "should show error for invalid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a82e61b9f9028e901d4a",
+                  "file": "auth.e2e.test.ts",
+                  "line": 142,
+                  "column": 9
+                },
+                {
+                  "title": "should handle \"Remember Me\" functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-f473f9cb4735bcf8568b",
+                  "file": "auth.e2e.test.ts",
+                  "line": 157,
+                  "column": 9
+                },
+                {
+                  "title": "should redirect to login for protected routes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-6cc90e476910ca48fbf9",
+                  "file": "auth.e2e.test.ts",
+                  "line": 179,
+                  "column": 9
+                },
+                {
+                  "title": "should login with valid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c3158ebe91c2188694a1",
+                  "file": "auth.e2e.test.ts",
+                  "line": 124,
+                  "column": 9
+                },
+                {
+                  "title": "should show error for invalid credentials",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-8ff2f4a77a3ba3b72de1",
+                  "file": "auth.e2e.test.ts",
+                  "line": 142,
+                  "column": 9
+                },
+                {
+                  "title": "should handle \"Remember Me\" functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-ade1eb9d987c76eae62f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 157,
+                  "column": 9
+                },
+                {
+                  "title": "should redirect to login for protected routes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-81e21e97aacde3fe2a31",
+                  "file": "auth.e2e.test.ts",
+                  "line": 179,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Logout Flow",
+              "file": "auth.e2e.test.ts",
+              "line": 194,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should logout successfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-1ae0ebe18f70ce9e5c4b",
+                  "file": "auth.e2e.test.ts",
+                  "line": 195,
+                  "column": 9
+                },
+                {
+                  "title": "should clear session data on logout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a114ea235160fe016b73",
+                  "file": "auth.e2e.test.ts",
+                  "line": 215,
+                  "column": 9
+                },
+                {
+                  "title": "should logout successfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-602a6669c40f6c0b061f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 195,
+                  "column": 9
+                },
+                {
+                  "title": "should clear session data on logout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7bad2dc884420f1764c8",
+                  "file": "auth.e2e.test.ts",
+                  "line": 215,
+                  "column": 9
+                },
+                {
+                  "title": "should logout successfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-8ee589f2b86c884b61d8",
+                  "file": "auth.e2e.test.ts",
+                  "line": 195,
+                  "column": 9
+                },
+                {
+                  "title": "should clear session data on logout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-05aed2fb2a989a4c8b99",
+                  "file": "auth.e2e.test.ts",
+                  "line": 215,
+                  "column": 9
+                },
+                {
+                  "title": "should logout successfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-0b7965abed9975c19932",
+                  "file": "auth.e2e.test.ts",
+                  "line": 195,
+                  "column": 9
+                },
+                {
+                  "title": "should clear session data on logout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4f31b733de5d5e460150",
+                  "file": "auth.e2e.test.ts",
+                  "line": 215,
+                  "column": 9
+                },
+                {
+                  "title": "should logout successfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-de673bb1fbe2e4bd4ea8",
+                  "file": "auth.e2e.test.ts",
+                  "line": 195,
+                  "column": 9
+                },
+                {
+                  "title": "should clear session data on logout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-5a741b41d1484b7083ca",
+                  "file": "auth.e2e.test.ts",
+                  "line": 215,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Password Reset Flow",
+              "file": "auth.e2e.test.ts",
+              "line": 238,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should complete password reset process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-5bfddb25af11a1492e03",
+                  "file": "auth.e2e.test.ts",
+                  "line": 239,
+                  "column": 9
+                },
+                {
+                  "title": "should validate new password strength",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7b5e147d110212d6965b",
+                  "file": "auth.e2e.test.ts",
+                  "line": 264,
+                  "column": 9
+                },
+                {
+                  "title": "should handle expired reset token",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4d5ff56cfd5f8712c10c",
+                  "file": "auth.e2e.test.ts",
+                  "line": 276,
+                  "column": 9
+                },
+                {
+                  "title": "should complete password reset process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-3010cb4a24250c615087",
+                  "file": "auth.e2e.test.ts",
+                  "line": 239,
+                  "column": 9
+                },
+                {
+                  "title": "should validate new password strength",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-971f33094c49df0e4199",
+                  "file": "auth.e2e.test.ts",
+                  "line": 264,
+                  "column": 9
+                },
+                {
+                  "title": "should handle expired reset token",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-25596648665d8982a8e1",
+                  "file": "auth.e2e.test.ts",
+                  "line": 276,
+                  "column": 9
+                },
+                {
+                  "title": "should complete password reset process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a6e1f1824bc2a50f1ab9",
+                  "file": "auth.e2e.test.ts",
+                  "line": 239,
+                  "column": 9
+                },
+                {
+                  "title": "should validate new password strength",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-1a040ac7b5f15dae8db8",
+                  "file": "auth.e2e.test.ts",
+                  "line": 264,
+                  "column": 9
+                },
+                {
+                  "title": "should handle expired reset token",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-6bb981f0352fda0cfe95",
+                  "file": "auth.e2e.test.ts",
+                  "line": 276,
+                  "column": 9
+                },
+                {
+                  "title": "should complete password reset process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-2a68ab6c3f4d26c26158",
+                  "file": "auth.e2e.test.ts",
+                  "line": 239,
+                  "column": 9
+                },
+                {
+                  "title": "should validate new password strength",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-e739f9e44820db418058",
+                  "file": "auth.e2e.test.ts",
+                  "line": 264,
+                  "column": 9
+                },
+                {
+                  "title": "should handle expired reset token",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-094804bac9360205d3ef",
+                  "file": "auth.e2e.test.ts",
+                  "line": 276,
+                  "column": 9
+                },
+                {
+                  "title": "should complete password reset process",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c8a2a8a3bd1178be0706",
+                  "file": "auth.e2e.test.ts",
+                  "line": 239,
+                  "column": 9
+                },
+                {
+                  "title": "should validate new password strength",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-1514988e4845ce2494e1",
+                  "file": "auth.e2e.test.ts",
+                  "line": 264,
+                  "column": 9
+                },
+                {
+                  "title": "should handle expired reset token",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-5f0f91fcf2b006e92d6d",
+                  "file": "auth.e2e.test.ts",
+                  "line": 276,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Session Management",
+              "file": "auth.e2e.test.ts",
+              "line": 287,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should maintain session across page refreshes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-bc6a94e0db216406ae58",
+                  "file": "auth.e2e.test.ts",
+                  "line": 288,
+                  "column": 9
+                },
+                {
+                  "title": "should handle session timeout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7e17c2f93b734bb5559e",
+                  "file": "auth.e2e.test.ts",
+                  "line": 304,
+                  "column": 9
+                },
+                {
+                  "title": "should maintain session across page refreshes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-65ea30b02d76504399c5",
+                  "file": "auth.e2e.test.ts",
+                  "line": 288,
+                  "column": 9
+                },
+                {
+                  "title": "should handle session timeout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-ce3036bb430bb5a0aa44",
+                  "file": "auth.e2e.test.ts",
+                  "line": 304,
+                  "column": 9
+                },
+                {
+                  "title": "should maintain session across page refreshes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-49b144d635b0d86981e8",
+                  "file": "auth.e2e.test.ts",
+                  "line": 288,
+                  "column": 9
+                },
+                {
+                  "title": "should handle session timeout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-e6a8a6d97ee3c3852c16",
+                  "file": "auth.e2e.test.ts",
+                  "line": 304,
+                  "column": 9
+                },
+                {
+                  "title": "should maintain session across page refreshes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-b503776372c2397f0725",
+                  "file": "auth.e2e.test.ts",
+                  "line": 288,
+                  "column": 9
+                },
+                {
+                  "title": "should handle session timeout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-9e58f183bdc339334fa0",
+                  "file": "auth.e2e.test.ts",
+                  "line": 304,
+                  "column": 9
+                },
+                {
+                  "title": "should maintain session across page refreshes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a952e5ab24b33966eed7",
+                  "file": "auth.e2e.test.ts",
+                  "line": 288,
+                  "column": 9
+                },
+                {
+                  "title": "should handle session timeout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-7ead21ef143dd31f8acf",
+                  "file": "auth.e2e.test.ts",
+                  "line": 304,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Security Tests",
+              "file": "auth.e2e.test.ts",
+              "line": 332,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should prevent XSS in user input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-0e25822f0849a5070855",
+                  "file": "auth.e2e.test.ts",
+                  "line": 333,
+                  "column": 9
+                },
+                {
+                  "title": "should enforce HTTPS in production",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-80724c0bed8b4893e31a",
+                  "file": "auth.e2e.test.ts",
+                  "line": 351,
+                  "column": 9
+                },
+                {
+                  "title": "should implement CSRF protection",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-add723ab30a2540d2638",
+                  "file": "auth.e2e.test.ts",
+                  "line": 361,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent XSS in user input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-782a7f40e1ca0ed83d02",
+                  "file": "auth.e2e.test.ts",
+                  "line": 333,
+                  "column": 9
+                },
+                {
+                  "title": "should enforce HTTPS in production",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-651aace1c6b4c7f6e370",
+                  "file": "auth.e2e.test.ts",
+                  "line": 351,
+                  "column": 9
+                },
+                {
+                  "title": "should implement CSRF protection",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-4178df32d8ca8dbad5a9",
+                  "file": "auth.e2e.test.ts",
+                  "line": 361,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent XSS in user input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c24928edbcf5e729a488",
+                  "file": "auth.e2e.test.ts",
+                  "line": 333,
+                  "column": 9
+                },
+                {
+                  "title": "should enforce HTTPS in production",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-f9247557802ec0f7e13e",
+                  "file": "auth.e2e.test.ts",
+                  "line": 351,
+                  "column": 9
+                },
+                {
+                  "title": "should implement CSRF protection",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-0aec8132fb9024f2619f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 361,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent XSS in user input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-a488f8fb4dc73907f85e",
+                  "file": "auth.e2e.test.ts",
+                  "line": 333,
+                  "column": 9
+                },
+                {
+                  "title": "should enforce HTTPS in production",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-ca1a623f26c5cfaa89c6",
+                  "file": "auth.e2e.test.ts",
+                  "line": 351,
+                  "column": 9
+                },
+                {
+                  "title": "should implement CSRF protection",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-58ca74b5b3a4fd14c660",
+                  "file": "auth.e2e.test.ts",
+                  "line": 361,
+                  "column": 9
+                },
+                {
+                  "title": "should prevent XSS in user input",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-28ed6d10c752ca415b47",
+                  "file": "auth.e2e.test.ts",
+                  "line": 333,
+                  "column": 9
+                },
+                {
+                  "title": "should enforce HTTPS in production",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-08fcbdd6a6ffd4b80432",
+                  "file": "auth.e2e.test.ts",
+                  "line": 351,
+                  "column": 9
+                },
+                {
+                  "title": "should implement CSRF protection",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-558ae423a4e52c877216",
+                  "file": "auth.e2e.test.ts",
+                  "line": 361,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Accessibility Tests",
+              "file": "auth.e2e.test.ts",
+              "line": 373,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should support keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-6b90c8b11524ba7e17ee",
+                  "file": "auth.e2e.test.ts",
+                  "line": 374,
+                  "column": 9
+                },
+                {
+                  "title": "should have proper ARIA labels",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-c013057701294aff390d",
+                  "file": "auth.e2e.test.ts",
+                  "line": 391,
+                  "column": 9
+                },
+                {
+                  "title": "should announce validation errors to screen readers",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-75e2ba19ef898ee2e4cd",
+                  "file": "auth.e2e.test.ts",
+                  "line": 405,
+                  "column": 9
+                },
+                {
+                  "title": "should support keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-723f40c88a4beb16796f",
+                  "file": "auth.e2e.test.ts",
+                  "line": 374,
+                  "column": 9
+                },
+                {
+                  "title": "should have proper ARIA labels",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-8e0db14e83fe09dfccdb",
+                  "file": "auth.e2e.test.ts",
+                  "line": 391,
+                  "column": 9
+                },
+                {
+                  "title": "should announce validation errors to screen readers",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-91cc2113cd8b3cd3fd29",
+                  "file": "auth.e2e.test.ts",
+                  "line": 405,
+                  "column": 9
+                },
+                {
+                  "title": "should support keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-0bba9099707afc3475e3",
+                  "file": "auth.e2e.test.ts",
+                  "line": 374,
+                  "column": 9
+                },
+                {
+                  "title": "should have proper ARIA labels",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-e026f78f10fb189e458c",
+                  "file": "auth.e2e.test.ts",
+                  "line": 391,
+                  "column": 9
+                },
+                {
+                  "title": "should announce validation errors to screen readers",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-65843cf14ca19ce6b026",
+                  "file": "auth.e2e.test.ts",
+                  "line": 405,
+                  "column": 9
+                },
+                {
+                  "title": "should support keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-0671741286aec137cf06",
+                  "file": "auth.e2e.test.ts",
+                  "line": 374,
+                  "column": 9
+                },
+                {
+                  "title": "should have proper ARIA labels",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-40b7774215daf9cb4d39",
+                  "file": "auth.e2e.test.ts",
+                  "line": 391,
+                  "column": 9
+                },
+                {
+                  "title": "should announce validation errors to screen readers",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-40c6d88c20140ce88141",
+                  "file": "auth.e2e.test.ts",
+                  "line": 405,
+                  "column": 9
+                },
+                {
+                  "title": "should support keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-d358f678f239e1060712",
+                  "file": "auth.e2e.test.ts",
+                  "line": 374,
+                  "column": 9
+                },
+                {
+                  "title": "should have proper ARIA labels",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-143dd047ef78e15651ed",
+                  "file": "auth.e2e.test.ts",
+                  "line": 391,
+                  "column": 9
+                },
+                {
+                  "title": "should announce validation errors to screen readers",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Safari",
+                      "projectName": "Mobile Safari",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "5c195fcaa8aa5f4313d6-955760ce06cc1668c78c",
+                  "file": "auth.e2e.test.ts",
+                  "line": 405,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-13T00:16:17.112Z",
+    "duration": 62.773000000000025,
+    "expected": 0,
+    "skipped": 105,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
