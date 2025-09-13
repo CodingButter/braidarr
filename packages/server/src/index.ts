@@ -11,6 +11,7 @@ import { healthRoutes } from "./routes/health.js";
 import { apiRoutes } from "./routes/api.js";
 import { authRoutes } from "./routes/auth.js";
 import { plexRoutes } from "./routes/plex/index.js";
+import { arrRoutes } from "./routes/arr/index.js";
 import { csrfPlugin } from "./middleware/csrf.js";
 import { rateLimitPlugin } from "./middleware/rate-limit.js";
 
@@ -81,6 +82,7 @@ await server.register(healthRoutes);
 await server.register(authRoutes, { prefix: "/api/v1/auth" });
 await server.register(apiRoutes, { prefix: "/api/v1" });
 await server.register(plexRoutes, { prefix: "/api/v1/plex" });
+await server.register(arrRoutes, { prefix: "/api/v1/arr" });
 
 // Global error handler
 server.setErrorHandler((error, _request, reply) => {
