@@ -12,8 +12,8 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .logo {
@@ -29,6 +29,7 @@
   margin: 0;
   padding: 0;
   gap: 2rem;
+  flex: 1;
 }
 
 .nav-links a {
