@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
+import PlexPage from "./pages/PlexPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -36,6 +37,14 @@ function App() {
           element={
             <ProtectedRoute>
               <DashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/plex"
+          element={
+            <ProtectedRoute>
+              <PlexPage />
             </ProtectedRoute>
           }
         />
