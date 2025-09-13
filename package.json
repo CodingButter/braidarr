@@ -31,6 +31,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "concurrently": "^8.2.2",
@@ -65,5 +66,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/CodingButter/braidarr.git"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/csrf-protection": "^7.1.0",
+    "@fastify/jwt": "^10.0.0",
+    "argon2": "^0.44.0",
+    "jsonwebtoken": "^9.0.2"
   }
 }
