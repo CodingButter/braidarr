@@ -3,7 +3,7 @@ import {
   MdAdd, 
   MdEdit, 
   MdDelete, 
-  MdBuild,
+  MdTestTube,
   MdCheckCircle,
   MdError,
   MdWarning,
@@ -700,7 +700,7 @@ export function DownloadClientsSection({ onMessage }: DownloadClientsSectionProp
                       {testingClient === client.id ? (
                         <MdRefresh className="spinning" size={16} />
                       ) : (
-                        <MdBuild size={16} />
+                        <MdTestTube size={16} />
                       )}
                     </button>
                     <button

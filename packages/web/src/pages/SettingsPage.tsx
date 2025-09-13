@@ -13,9 +13,13 @@ import { GeneralSection } from "../components/settings/GeneralSection";
 import { AuthenticationSection } from "../components/settings/AuthenticationSection";
 import { SecuritySection } from "../components/settings/SecuritySection";
 import { ApiKeysSection } from "../components/settings/ApiKeysSection";
+import { IndexersSection } from "../components/settings/IndexersSection";
+import { QualityProfilesSection } from "../components/settings/QualityProfilesSection";
+import { RootFoldersSection } from "../components/settings/RootFoldersSection";
+import { DownloadClientsSection } from "../components/settings/DownloadClientsSection";
 import "./CommonPage.css";
 
-type SettingsSection = 'general' | 'authentication' | 'security' | 'api-keys' | 'media' | 'downloads' | 'indexers' | 'notifications';
+type SettingsSection = 'general' | 'authentication' | 'security' | 'api-keys' | 'media' | 'downloads' | 'indexers' | 'notifications' | 'quality-profiles' | 'root-folders';
 
 export default function SettingsPage() {
   const [activeSection, setActiveSection] = useState<SettingsSection>('general');
@@ -189,21 +193,27 @@ export default function SettingsPage() {
         );
       case 'downloads':
         return (
-          <div className="settings-section">
-            <h3>Download Clients</h3>
-            <div className="placeholder-section">
-              <p>Download client configuration will be implemented here.</p>
-            </div>
-          </div>
+          <DownloadClientsSection
+            onMessage={handleMessage}
+          />
         );
       case 'indexers':
         return (
-          <div className="settings-section">
-            <h3>Indexers</h3>
-            <div className="placeholder-section">
-              <p>Indexer configuration will be implemented here.</p>
-            </div>
-          </div>
+          <IndexersSection
+            onMessage={handleMessage}
+          />
+        );
+      case 'quality-profiles':
+        return (
+          <QualityProfilesSection
+            onMessage={handleMessage}
+          />
+        );
+      case 'root-folders':
+        return (
+          <RootFoldersSection
+            onMessage={handleMessage}
+          />
         );
       case 'notifications':
         return (
@@ -293,10 +303,26 @@ export default function SettingsPage() {
               </li>
               <li>
                 <button 
-                  className={`settings-menu-item ${activeSection === 'media' ? 'active' : ''}`}
-                  onClick={() => setActiveSection('media')}
+                  className={`settings-menu-item ${activeSection === 'quality-profiles' ? 'active' : ''}`}
+                  onClick={() => setActiveSection('quality-profiles')}
                 >
-                  Media Management
+                  Quality Profiles
+                </button>
+              </li>
+              <li>
+                <button 
+                  className={`settings-menu-item ${activeSection === 'root-folders' ? 'active' : ''}`}
+                  onClick={() => setActiveSection('root-folders')}
+                >
+                  Root Folders
+                </button>
+              </li>
+              <li>
+                <button 
+                  className={`settings-menu-item ${activeSection === 'indexers' ? 'active' : ''}`}
+                  onClick={() => setActiveSection('indexers')}
+                >
+                  Indexers
                 </button>
               </li>
               <li>
@@ -309,10 +335,10 @@ export default function SettingsPage() {
               </li>
               <li>
                 <button 
-                  className={`settings-menu-item ${activeSection === 'indexers' ? 'active' : ''}`}
-                  onClick={() => setActiveSection('indexers')}
+                  className={`settings-menu-item ${activeSection === 'media' ? 'active' : ''}`}
+                  onClick={() => setActiveSection('media')}
                 >
-                  Indexers
+                  Media Management
                 </button>
               </li>
               <li>

@@ -4,7 +4,7 @@ import {
   MdEdit, 
   MdDelete, 
   MdRefresh, 
-  MdBuild,
+  MdTestTube,
   MdCheckCircle,
   MdError,
   MdWarning,
@@ -653,7 +653,7 @@ export function IndexersSection({ onMessage }: IndexersSectionProps) {
                       {testingIndexer === indexer.id ? (
                         <MdRefresh className="spinning" size={16} />
                       ) : (
-                        <MdBuild size={16} />
+                        <MdTestTube size={16} />
                       )}
                     </button>
                     <button

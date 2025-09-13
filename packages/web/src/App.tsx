@@ -8,7 +8,6 @@ import IntegrationsPage from "./pages/IntegrationsPage";
 import ActivityPage from "./pages/ActivityPage";
 import SettingsPage from "./pages/SettingsPage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
 import { useAuthStore } from "./stores/authStore";
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
         <Route path="/settings" element={<SettingsPage />} />
         {/* Auth routes accessible from settings or direct navigation */}
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
       </Route>
     </Routes>
   );
