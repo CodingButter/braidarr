@@ -2,7 +2,7 @@
  * Utility functions for Plex integration
  */
 
-import { AxiosError } from 'axios';
+// Utility functions for Plex integration
 
 export interface RetryOptions {
   maxRetries: number;
@@ -26,7 +26,7 @@ export async function retryWithBackoff<T>(
   options: Partial<RetryOptions> = {}
 ): Promise<T> {
   const opts = { ...defaultRetryOptions, ...options };
-  let lastError: Error;
+  let lastError: Error = new Error('Unknown error');
   
   for (let attempt = 0; attempt <= opts.maxRetries; attempt++) {
     try {

@@ -3,11 +3,10 @@
  */
 
 import { FastifyPluginAsync } from 'fastify';
-import { z } from 'zod';
 import { plexService } from '../../integrations/plex/index.js';
 
-// Request/Response schemas
-const getServersSchema = {
+// Request/Response schemas - TODO: Implement schema validation
+/* const getServersSchema = {
   headers: z.object({
     'x-plex-token': z.string(),
   }),
@@ -59,8 +58,9 @@ const getServersSchema = {
       message: z.string(),
     }),
   },
-};
+}; */
 
+/*
 const getLibrariesSchema = {
   headers: z.object({
     'x-plex-token': z.string().optional(),
@@ -133,7 +133,7 @@ const testConnectionSchema = {
       message: z.string(),
     }),
   },
-};
+}; */
 
 export const plexServerRoutes: FastifyPluginAsync = async (fastify) => {
   /**

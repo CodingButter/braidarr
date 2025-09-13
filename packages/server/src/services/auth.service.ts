@@ -7,15 +7,7 @@ import {
 } from '../lib/jwt.js';
 import { z } from 'zod';
 
-// Validation schemas
-export const RegisterSchema = z.object({
-  email: z.string().email(),
-  username: z.string().min(3).max(30).regex(/^[a-zA-Z0-9_-]+$/),
-  password: z.string().min(8).max(100),
-  firstName: z.string().min(1).max(50).optional(),
-  lastName: z.string().min(1).max(50).optional(),
-});
-
+// Validation schemas (registration removed for arr ecosystem)
 export const LoginSchema = z.object({
   email: z.string().email(),
   password: z.string(),
@@ -25,84 +17,14 @@ export const RefreshTokenSchema = z.object({
   refreshToken: z.string(),
 });
 
-export type RegisterInput = z.infer<typeof RegisterSchema>;
 export type LoginInput = z.infer<typeof LoginSchema>;
 export type RefreshTokenInput = z.infer<typeof RefreshTokenSchema>;
 
 export class AuthService {
   /**
-   * Register a new user
+   * Registration has been removed - arr ecosystem apps don't allow user registration
+   * Users must be created via initial setup or admin tools
    */
-  async register(data: RegisterInput) {
-    // Check if user already exists
-    const existingUser = await prisma.user.findFirst({
-      where: {
-        OR: [
-          { email: data.email },
-          { username: data.username },
-        ],
-      },
-    });
-
-    if (existingUser) {
-      if (existingUser.email === data.email) {
-        throw new Error('Email already registered');
-      }
-      throw new Error('Username already taken');
-    }
-
-    // Hash the password
-    const hashedPassword = await hashPassword(data.password);
-
-    // Create the user
-    const user = await prisma.user.create({
-      data: {
-        email: data.email,
-        username: data.username,
-        password: hashedPassword,
-        firstName: data.firstName || null,
-        lastName: data.lastName || null,
-      },
-      select: {
-        id: true,
-        email: true,
-        username: true,
-        firstName: true,
-        lastName: true,
-        isActive: true,
-        isEmailVerified: true,
-        createdAt: true,
-      },
-    });
-
-    // Generate tokens
-    const accessToken = generateAccessToken({
-      userId: user.id,
-      email: user.email,
-      username: user.username,
-    });
-
-    const { token: refreshToken, tokenId } = generateRefreshToken({
-      userId: user.id,
-      email: user.email,
-      username: user.username,
-    });
-
-    // Store refresh token
-    await prisma.refreshToken.create({
-      data: {
-        token: tokenId,
-        userId: user.id,
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
-      },
-    });
-
-    return {
-      user,
-      accessToken,
-      refreshToken,
-    };
-  }
 
   /**
    * Login a user

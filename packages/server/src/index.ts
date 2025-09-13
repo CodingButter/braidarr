@@ -11,6 +11,9 @@ import { healthRoutes } from "./routes/health.js";
 import { apiRoutes } from "./routes/api.js";
 import { authRoutes } from "./routes/auth.js";
 import { plexRoutes } from "./routes/plex/index.js";
+import { apiKeyRoutes } from "./routes/api-keys.js";
+import { settingsRoutes } from "./routes/settings.js";
+import { indexerRoutes } from "./routes/indexer.routes.js";
 import { csrfPlugin } from "./middleware/csrf.js";
 import { rateLimitPlugin } from "./middleware/rate-limit.js";
 
@@ -81,6 +84,11 @@ await server.register(healthRoutes);
 await server.register(authRoutes, { prefix: "/api/v1/auth" });
 await server.register(apiRoutes, { prefix: "/api/v1" });
 await server.register(plexRoutes, { prefix: "/api/v1/plex" });
+await server.register(apiKeyRoutes, { prefix: "/api/v1/api-keys" });
+await server.register(settingsRoutes, { prefix: "/api/v1/settings" });
+
+// Arr ecosystem routes
+await server.register(indexerRoutes, { prefix: "/api/v1/indexer" });
 
 // Global error handler
 server.setErrorHandler((error, _request, reply) => {

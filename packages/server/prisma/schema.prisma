@@ -26,6 +26,7 @@ model User {
   // Relations
   refreshTokens   RefreshToken[]
   loginAttempts   LoginAttempt[]
+  apiKeys         ApiKey[]
   
   @@index([email])
   @@index([username])
@@ -56,4 +57,118 @@ model LoginAttempt {
   @@index([email])
   @@index([ipAddress])
   @@index([createdAt])
+}
+
+model ApiKey {
+  id          String   @id @default(uuid())
+  name        String   // User-friendly name for the API key
+  key         String   @unique // The actual API key (hashed)
+  keyPrefix   String   // First 8 characters for identification
+  scopes      String   // JSON array of scopes/permissions
+  lastUsedAt  DateTime?
+  lastUsedIp  String?
+  isActive    Boolean  @default(true)
+  expiresAt   DateTime?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  usage       ApiKeyUsage[]
+  
+  @@index([key])
+  @@index([keyPrefix])
+  @@index([userId])
+  @@index([isActive])
+  @@index([expiresAt])
+}
+
+model ApiKeyUsage {
+  id          String   @id @default(uuid())
+  apiKeyId    String
+  apiKey      ApiKey   @relation(fields: [apiKeyId], references: [id], onDelete: Cascade)
+  endpoint    String   // API endpoint accessed
+  method      String   // HTTP method
+  ipAddress   String
+  userAgent   String?
+  responseCode Int
+  createdAt   DateTime @default(now())
+  
+  @@index([apiKeyId])
+  @@index([createdAt])
+  @@index([endpoint])
+}
+
+// Arr ecosystem models
+model Indexer {
+  id          String   @id @default(uuid())
+  name        String
+  type        String   // usenet, torrent
+  baseUrl     String
+  apiKey      String?
+  categories  String   // JSON array of category IDs
+  priority    Int      @default(25)
+  isEnabled   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([type])
+  @@index([isEnabled])
+}
+
+model QualityProfile {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  cutoff      Int      // Quality ID for cutoff
+  items       String   // JSON array of quality items with allowed/upgradeUntil
+  isDefault   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([isDefault])
+}
+
+model RootFolder {
+  id          String   @id @default(uuid())
+  path        String   @unique
+  name        String?
+  isDefault   Boolean  @default(false)
+  freeSpace   BigInt?  // Bytes
+  totalSpace  BigInt?  // Bytes
+  lastScan    DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([isDefault])
+}
+
+model DownloadClient {
+  id          String   @id @default(uuid())
+  name        String
+  type        String   // transmission, qbittorrent, nzbget, sabnzbd
+  host        String
+  port        Int
+  username    String?
+  password    String?
+  category    String?
+  isEnabled   Boolean  @default(true)
+  priority    Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([type])
+  @@index([isEnabled])
+  @@index([priority])
+}
+
+model SystemSettings {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String   // JSON value
+  category    String   @default("general")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([category])
 }
