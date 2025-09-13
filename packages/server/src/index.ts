@@ -6,8 +6,12 @@ import compress from "@fastify/compress";
 import rateLimit from "@fastify/rate-limit";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
+import cookie from "@fastify/cookie";
 import { healthRoutes } from "./routes/health.js";
 import { apiRoutes } from "./routes/api.js";
+import { authRoutes } from "./routes/auth.js";
+import { csrfPlugin } from "./middleware/csrf.js";
+import { rateLimitPlugin } from "./middleware/rate-limit.js";
 
 const server = Fastify({
   logger: {
@@ -16,20 +20,37 @@ const server = Fastify({
 });
 
 // Register plugins
-await server.register(helmet);
+await server.register(helmet, {
+  contentSecurityPolicy: process.env.NODE_ENV === "production",
+});
 await server.register(compress);
+
+// Cookie support (required for CSRF and refresh tokens)
+await server.register(cookie, {
+  secret: process.env.COOKIE_SECRET || "dev-cookie-secret-change-in-production",
+});
+
+// CORS configuration
+const corsOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',')
+  : ["http://localhost:3100", "http://localhost:3101"];
+
 await server.register(cors, {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? ["https://your-domain.com"]
-      : ["http://localhost:3400", "http://localhost:3000"],
+  origin: corsOrigins,
   credentials: true,
 });
 
+// Global rate limiting
 await server.register(rateLimit, {
-  max: 100,
-  timeWindow: "1 minute",
+  max: parseInt(process.env.RATE_LIMIT_MAX || "100"),
+  timeWindow: process.env.RATE_LIMIT_WINDOW || "1 minute",
 });
+
+// CSRF protection
+await server.register(csrfPlugin);
+
+// Route-specific rate limiting
+await server.register(rateLimitPlugin);
 
 // Swagger documentation
 await server.register(swagger, {
@@ -56,6 +77,7 @@ await server.register(swaggerUi, {
 
 // Register routes
 await server.register(healthRoutes);
+await server.register(authRoutes, { prefix: "/api/v1/auth" });
 await server.register(apiRoutes, { prefix: "/api/v1" });
 
 // Global error handler
