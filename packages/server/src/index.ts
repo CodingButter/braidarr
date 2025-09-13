@@ -8,6 +8,7 @@ import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 import { healthRoutes } from "./routes/health.js";
 import { apiRoutes } from "./routes/api.js";
+import { plexRoutes } from "./routes/plex/index.js";
 
 const server = Fastify({
   logger: {
@@ -57,6 +58,7 @@ await server.register(swaggerUi, {
 // Register routes
 await server.register(healthRoutes);
 await server.register(apiRoutes, { prefix: "/api/v1" });
+await server.register(plexRoutes, { prefix: "/api/v1/plex" });
 
 // Global error handler
 server.setErrorHandler((error, _request, reply) => {
