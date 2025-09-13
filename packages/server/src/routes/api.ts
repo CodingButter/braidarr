@@ -1,5 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
+import { authenticateApiKey, requirePermission } from '../middleware/api-auth.js';
 
 // const UserSchema = z.object({
 //   id: z.string(),
@@ -19,10 +20,14 @@ let users = [
 ];
 
 export async function apiRoutes(fastify: FastifyInstance) {
+  // All API routes require authentication (API key only for arr ecosystem)
+  fastify.addHook('preHandler', authenticateApiKey);
+
   // Users routes
   fastify.get(
     "/users",
     {
+      preHandler: [requirePermission('users', 'read')],
       schema: {
         description: "Get all users",
         tags: ["users"],
@@ -49,6 +54,7 @@ export async function apiRoutes(fastify: FastifyInstance) {
   fastify.get<{ Params: { id: string } }>(
     "/users/:id",
     {
+      preHandler: [requirePermission('users', 'read')],
       schema: {
         description: "Get user by ID",
         tags: ["users"],
@@ -96,6 +102,7 @@ export async function apiRoutes(fastify: FastifyInstance) {
   fastify.post<{ Body: z.infer<typeof CreateUserSchema> }>(
     "/users",
     {
+      preHandler: [requirePermission('users', 'create')],
       schema: {
         description: "Create a new user",
         tags: ["users"],
@@ -137,6 +144,7 @@ export async function apiRoutes(fastify: FastifyInstance) {
   fastify.get(
     "/media",
     {
+      preHandler: [requirePermission('media', 'read')],
       schema: {
         description: "Get media items",
         tags: ["media"],

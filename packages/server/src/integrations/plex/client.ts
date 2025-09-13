@@ -14,7 +14,7 @@ import {
   PlexConfig,
   PlexAuthState,
 } from './types.js';
-import { retryWithBackoff, formatPlexError, isServerUnavailable } from './utils.js';
+import { retryWithBackoff, formatPlexError } from './utils.js';
 
 export class PlexClient {
   private readonly authApi: AxiosInstance;

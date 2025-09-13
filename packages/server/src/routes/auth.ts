@@ -1,7 +1,6 @@
 import { FastifyPluginAsync } from 'fastify';
 import { 
   AuthService, 
-  RegisterSchema, 
   LoginSchema
 } from '../services/auth.service.js';
 import { verifyAccessToken } from '../lib/jwt.js';
@@ -9,64 +8,19 @@ import { verifyAccessToken } from '../lib/jwt.js';
 const authService = new AuthService();
 
 export const authRoutes: FastifyPluginAsync = async (server) => {
-  // Register endpoint
-  server.post('/register', {
-    schema: {
-      body: RegisterSchema,
-      response: {
-        200: {
-          type: 'object',
-          properties: {
-            user: {
-              type: 'object',
-              properties: {
-                id: { type: 'string' },
-                email: { type: 'string' },
-                username: { type: 'string' },
-                firstName: { type: ['string', 'null'] },
-                lastName: { type: ['string', 'null'] },
-                isEmailVerified: { type: 'boolean' },
-              },
-            },
-            accessToken: { type: 'string' },
-            refreshToken: { type: 'string' },
-          },
-        },
-      },
-    },
-  }, async (request, reply) => {
-    try {
-      const validatedData = RegisterSchema.parse(request.body);
-      const result = await authService.register(validatedData);
-      
-      // Set refresh token as httpOnly cookie
-      reply.setCookie('refreshToken', result.refreshToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        path: '/',
-        maxAge: 7 * 24 * 60 * 60, // 7 days
-      });
-
-      return {
-        user: result.user,
-        accessToken: result.accessToken,
-      };
-    } catch (error) {
-      if (error instanceof Error) {
-        if (error.message.includes('already')) {
-          reply.status(409).send({ error: error.message });
-          return;
-        }
-      }
-      throw error;
-    }
-  });
+  // Note: Registration has been removed - arr apps don't allow user registration
 
   // Login endpoint
   server.post('/login', {
     schema: {
-      body: LoginSchema,
+      body: {
+        type: 'object',
+        required: ['email', 'password'],
+        properties: {
+          email: { type: 'string', format: 'email' },
+          password: { type: 'string' },
+        },
+      },
       response: {
         200: {
           type: 'object',

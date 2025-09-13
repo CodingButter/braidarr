@@ -3,11 +3,11 @@
  */
 
 import { FastifyPluginAsync } from 'fastify';
-import { z } from 'zod';
 import { plexService } from '../../integrations/plex/index.js';
 
-// Request/Response schemas
-const initiatePinAuthSchema = {
+// Request/Response schemas  
+// TODO: Implement schema validation for all endpoints
+/* const initiatePinAuthSchema = {
   response: {
     200: {
       type: 'object',
@@ -30,9 +30,9 @@ const initiatePinAuthSchema = {
       required: ['error', 'message'],
     },
   },
-};
+}; */
 
-const checkPinStatusSchema = {
+/* const checkPinStatusSchema = {
   params: {
     type: 'object',
     properties: {
@@ -83,9 +83,9 @@ const checkPinStatusSchema = {
       required: ['error', 'message'],
     },
   },
-};
+}; */
 
-const cancelPinAuthSchema = {
+/* const cancelPinAuthSchema = {
   params: {
     type: 'object',
     properties: {
@@ -103,9 +103,9 @@ const cancelPinAuthSchema = {
       required: ['success', 'message'],
     },
   },
-};
+}; */
 
-const validateTokenSchema = {
+/* const validateTokenSchema = {
   body: {
     type: 'object',
     properties: {
@@ -140,7 +140,7 @@ const validateTokenSchema = {
       required: ['error', 'message'],
     },
   },
-};
+}; */
 
 export const plexAuthRoutes: FastifyPluginAsync = async (fastify) => {
   /**
