@@ -27,6 +27,7 @@ model User {
   refreshTokens   RefreshToken[]
   loginAttempts   LoginAttempt[]
   apiKeys         ApiKey[]
+  mediaRequests   MediaRequest[]
   
   @@index([email])
   @@index([username])
@@ -112,6 +113,20 @@ model Indexer {
   isEnabled   Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+// Arr ecosystem models
+model Indexer {
+  id          String   @id @default(uuid())
+  name        String
+  type        String   // usenet, torrent
+  baseUrl     String
+  apiKey      String?
+  categories  String   // JSON array of category IDs
+  priority    Int      @default(25)
+  isEnabled   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   
   @@index([type])
   @@index([isEnabled])
@@ -171,4 +186,195 @@ model SystemSettings {
   updatedAt   DateTime @updatedAt
   
   @@index([category])
+}
+
+// Arr Ecosystem Integrations
+
+model ArrInstance {
+  id                String            @id @default(uuid())
+  name              String
+  type              ArrType
+  baseUrl           String
+  apiKey            String            // Encrypted API key
+  isEnabled         Boolean           @default(true)
+  isConnected       Boolean           @default(false)
+  lastConnectedAt   DateTime?
+  version           String?
+  settings          Json?             // Instance-specific settings
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  
+  // Relations
+  qualityProfiles   QualityProfile[]
+  downloadClients   DownloadClient[]
+  indexers          Indexer[]
+  webhookEvents     WebhookEvent[]
+  mediaRequests     MediaRequest[]
+>>>>>>> integration-development
+  
+  @@index([type])
+  @@index([isEnabled])
+}
+
+model ArrQualityProfile {
+  id            String      @id @default(uuid())
+  arrInstanceId String
+  arrInstance   ArrInstance @relation(fields: [arrInstanceId], references: [id], onDelete: Cascade)
+  externalId    Int         // ID from the arr application
+  name          String
+  upgradeAllowed Boolean    @default(true)
+  cutoff        Json        // Quality cutoff settings
+  items         Json        // Quality items configuration
+  isDefault     Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  @@index([arrInstanceId])
+  @@index([externalId])
+  @@unique([arrInstanceId, externalId])
+}
+
+model ArrDownloadClient {
+  id            String            @id @default(uuid())
+  arrInstanceId String?
+  arrInstance   ArrInstance?      @relation(fields: [arrInstanceId], references: [id], onDelete: SetNull)
+  name          String
+  type          DownloadClientType
+  host          String
+  port          Int
+  username      String?
+  password      String?           // Encrypted password
+  category      String?
+  priority      Int               @default(0)
+  isEnabled     Boolean           @default(true)
+  settings      Json?             // Client-specific settings
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  
+  @@index([type])
+  @@index([isEnabled])
+}
+
+model ArrIndexer {
+  id               String           @id @default(uuid())
+  arrInstanceId    String?
+  arrInstance      ArrInstance?     @relation(fields: [arrInstanceId], references: [id], onDelete: SetNull)
+  name             String
+  implementation   String           // Indexer implementation (Torznab, Newznab, etc.)
+  baseUrl          String
+  apiKey           String?          // Encrypted API key
+  categories       Json?            // Supported categories
+  capabilities     Json?            // Indexer capabilities
+  priority         Int              @default(25)
+  isEnabled        Boolean          @default(true)
+  seedRatio        Float?
+  seedTime         Int?             // In minutes
+  seasonPackSeedTime Int?           // In minutes
+  settings         Json?            // Indexer-specific settings
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  
+  @@index([implementation])
+  @@index([isEnabled])
+}
+
+model WebhookEvent {
+  id            String          @id @default(uuid())
+  arrInstanceId String
+  arrInstance   ArrInstance     @relation(fields: [arrInstanceId], references: [id], onDelete: Cascade)
+  eventType     WebhookEventType
+  data          Json            // Event payload data
+  processed     Boolean         @default(false)
+  processedAt   DateTime?
+  errorMessage  String?
+  retryCount    Int             @default(0)
+  createdAt     DateTime        @default(now())
+  
+  @@index([arrInstanceId])
+  @@index([eventType])
+  @@index([processed])
+  @@index([createdAt])
+}
+
+model MediaRequest {
+  id              String           @id @default(uuid())
+  userId          String
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type            MediaType
+  title           String
+  year            Int?
+  tmdbId          Int?
+  tvdbId          Int?
+  imdbId          String?
+  status          RequestStatus    @default(PENDING)
+  arrInstanceId   String?
+  arrInstance     ArrInstance?     @relation(fields: [arrInstanceId], references: [id], onDelete: SetNull)
+  qualityProfileId String?
+  rootFolder      String?
+  monitored       Boolean          @default(true)
+  searchForMovie  Boolean          @default(true)
+  tags            Json?            // Array of tag IDs
+  requestedAt     DateTime         @default(now())
+  approvedAt      DateTime?
+  approvedBy      String?
+  rejectedAt      DateTime?
+  rejectedBy      String?
+  rejectionReason String?
+  completedAt     DateTime?
+  
+  @@index([userId])
+  @@index([type])
+  @@index([status])
+  @@index([arrInstanceId])
+}
+
+// Enums
+
+enum ArrType {
+  SONARR
+  RADARR
+  PROWLARR
+  LIDARR
+  READARR
+  WHISPARR
+}
+
+enum DownloadClientType {
+  QBITTORRENT
+  TRANSMISSION
+  DELUGE
+  RTORRENT
+  UTORRENT
+  SABNZBD
+  NZBGET
+}
+
+enum WebhookEventType {
+  DOWNLOAD
+  UPGRADE
+  RENAME
+  SERIES_DELETE
+  EPISODE_FILE_DELETE
+  MOVIE_DELETE
+  MOVIE_FILE_DELETE
+  HEALTH_ISSUE
+  APPLICATION_UPDATE
+  TEST
+}
+
+enum MediaType {
+  MOVIE
+  TV
+  MUSIC
+  BOOK
+  ADULT
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  COMPLETED
+  CANCELLED
+>>>>>>> integration-development
 }

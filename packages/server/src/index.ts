@@ -14,6 +14,7 @@ import { plexRoutes } from "./routes/plex/index.js";
 import { apiKeyRoutes } from "./routes/api-keys.js";
 import { settingsRoutes } from "./routes/settings.js";
 import { indexerRoutes } from "./routes/indexer.routes.js";
+import { arrRoutes } from "./routes/arr/index.js";
 import { csrfPlugin } from "./middleware/csrf.js";
 import { rateLimitPlugin } from "./middleware/rate-limit.js";
 
@@ -89,6 +90,7 @@ await server.register(settingsRoutes, { prefix: "/api/v1/settings" });
 
 // Arr ecosystem routes
 await server.register(indexerRoutes, { prefix: "/api/v1/indexer" });
+await server.register(arrRoutes, { prefix: "/api/v1/arr" });
 
 // Global error handler
 server.setErrorHandler((error, _request, reply) => {
