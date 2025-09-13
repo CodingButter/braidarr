@@ -141,7 +141,7 @@ const PlexPage: React.FC = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .plex-page {
           min-height: 100vh;
           background: #f7fafc;

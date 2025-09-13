@@ -1,0 +1,52 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-background-card);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-background-hover);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 6px var(--color-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(15deg);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Animation for smooth transitions */
+.theme-toggle-icon svg {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle:hover .theme-toggle-icon svg {
+  filter: drop-shadow(0 0 6px var(--color-primary));
+}

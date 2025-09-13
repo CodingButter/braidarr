@@ -159,7 +159,7 @@ const PlexLibrarySelection: React.FC<PlexLibrarySelectionProps> = ({
     if (!acc[library.type]) {
       acc[library.type] = [];
     }
-    acc[library.type].push(library);
+    acc[library.type]!.push(library);
     return acc;
   }, {} as Record<string, PlexLibrary[]>);
 
@@ -299,7 +299,7 @@ const PlexLibrarySelection: React.FC<PlexLibrarySelectionProps> = ({
         </button>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .library-selection {
           max-width: 1000px;
           margin: 0 auto;

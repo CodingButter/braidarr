@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 interface PlexAuthState {
@@ -201,7 +201,7 @@ const PlexAuthCard: React.FC<PlexAuthCardProps> = ({
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .plex-auth-card {
           max-width: 500px;
           margin: 0 auto;

@@ -1,12 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
-import PlexPage from "./pages/PlexPage";
+import ListsPage from "./pages/ListsPage";
+import SourcesPage from "./pages/SourcesPage";
+import IntegrationsPage from "./pages/IntegrationsPage";
+import ActivityPage from "./pages/ActivityPage";
+import SettingsPage from "./pages/SettingsPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuthStore } from "./stores/authStore";
 
 function App() {
@@ -21,33 +23,19 @@ function App() {
 
   return (
     <Routes>
-      {/* Public routes without layout */}
-      <Route path="/login" element={
-        isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage />
-      } />
-      <Route path="/register" element={
-        isAuthenticated ? <Navigate to="/dashboard" replace /> : <RegisterPage />
-      } />
-      
-      {/* Routes with layout */}
+      {/* Routes with layout - all now publicly accessible */}
       <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <DashboardPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/plex"
-          element={
-            <ProtectedRoute>
-              <PlexPage />
-            </ProtectedRoute>
-          }
-        />
+        {/* Redirect root to dashboard */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/lists" element={<ListsPage />} />
+        <Route path="/sources" element={<SourcesPage />} />
+        <Route path="/integrations" element={<IntegrationsPage />} />
+        <Route path="/activity" element={<ActivityPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        {/* Auth routes accessible from settings or direct navigation */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
     </Routes>
   );

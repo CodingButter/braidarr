@@ -1,11 +1,59 @@
 :root {
-  --color-primary: #646cff;
-  --color-primary-dark: #535bf2;
+  /* Light theme colors */
+  --color-primary: #007cb5;
+  --color-primary-hover: #006aa3;
+  --color-primary-dark: #005a8f;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #17a2b8;
+  
   --color-background: #ffffff;
   --color-background-alt: #f8f9fa;
-  --color-text: #213547;
-  --color-text-light: #6c757d;
-  --color-border: #e9ecef;
+  --color-background-card: #ffffff;
+  --color-background-hover: #f1f3f4;
+  
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-muted: #8e9297;
+  --color-text-inverse: #ffffff;
+  
+  --color-border: #dee2e6;
+  --color-border-light: #e9ecef;
+  --color-border-dark: #adb5bd;
+  
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme colors - inspired by Sonarr/Radarr */
+[data-theme="dark"] {
+  --color-primary: #3498db;
+  --color-primary-hover: #2980b9;
+  --color-primary-dark: #2471a3;
+  --color-secondary: #95a5a6;
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #16a085;
+  
+  --color-background: #1e1e1e;
+  --color-background-alt: #2d2d30;
+  --color-background-card: #252526;
+  --color-background-hover: #3c3c3c;
+  
+  --color-text: #cccccc;
+  --color-text-secondary: #9d9d9d;
+  --color-text-muted: #6c6c6c;
+  --color-text-inverse: #1e1e1e;
+  
+  --color-border: #3e3e42;
+  --color-border-light: #484848;
+  --color-border-dark: #2d2d30;
+  
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-hover: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -41,22 +89,49 @@ a:hover {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background-card);
+  color: var(--color-text);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px var(--color-shadow);
 }
 
 button:hover {
+  background-color: var(--color-background-hover);
   border-color: var(--color-primary);
+  box-shadow: 0 2px 6px var(--color-shadow-hover);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+button.primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+button.secondary {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+button.secondary:hover {
+  background-color: var(--color-background-hover);
+  color: var(--color-text);
 }

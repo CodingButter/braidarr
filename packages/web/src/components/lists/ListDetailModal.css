@@ -1,0 +1,250 @@
+/* ListDetailModal CSS - Styling for list detail modal */
+
+.list-detail-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.list-detail-modal {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.list-detail-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.list-detail-modal-header h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.list-detail-modal-close {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+.list-detail-modal-close:hover {
+  background: var(--color-hover);
+  color: var(--color-text);
+}
+
+.list-detail-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.list-detail-tab {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 16px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.list-detail-tab:hover {
+  background: var(--color-hover);
+  color: var(--color-text);
+}
+
+.list-detail-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.list-detail-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.list-detail-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.list-detail-card {
+  background: var(--color-card-background, var(--color-background));
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.list-detail-card h3 {
+  margin: 0 0 16px 0;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-detail-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.list-detail-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.list-detail-info-label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.list-detail-info-value {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.list-detail-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.list-detail-items-table th,
+.list-detail-items-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.list-detail-items-table th {
+  background: var(--color-card-background, var(--color-background));
+  color: var(--color-text);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.list-detail-items-table td {
+  color: var(--color-text);
+}
+
+.list-detail-item-poster {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.list-detail-status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.list-detail-status-badge.synced {
+  background: var(--color-success-light, #d4edda);
+  color: var(--color-success-dark, #155724);
+}
+
+.list-detail-status-badge.pending {
+  background: var(--color-warning-light, #fff3cd);
+  color: var(--color-warning-dark, #856404);
+}
+
+.list-detail-status-badge.error {
+  background: var(--color-error-light, #f8d7da);
+  color: var(--color-error-dark, #721c24);
+}
+
+.list-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.list-detail-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-detail-button.secondary {
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.list-detail-button.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.list-detail-button.danger {
+  background: var(--color-error, #dc3545);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .list-detail-modal {
+    margin: 10px;
+    max-height: 95vh;
+  }
+  
+  .list-detail-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .list-detail-items-table {
+    font-size: 0.8rem;
+  }
+  
+  .list-detail-items-table th,
+  .list-detail-items-table td {
+    padding: 8px;
+  }
+}

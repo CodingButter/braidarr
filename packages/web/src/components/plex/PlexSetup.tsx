@@ -141,11 +141,11 @@ const PlexSetup: React.FC<PlexSetupProps> = ({ onComplete, onError, apiBaseUrl }
       <div className="setup-header">
         <h2>Plex Integration Setup</h2>
         <div className="progress-indicators">
-          <div className={`step ${currentStep === 'auth' ? 'active' : currentStep !== 'auth' ? 'completed' : ''}`}>
+          <div className={`step ${currentStep === 'auth' ? 'active' : (currentStep === 'server' || currentStep === 'libraries') ? 'completed' : ''}`}>
             <div className="step-number">1</div>
             <span>Authentication</span>
           </div>
-          <div className={`step ${currentStep === 'server' ? 'active' : currentStep === 'libraries' ? 'completed' : ''}`}>
+          <div className={`step ${currentStep === 'server' ? 'active' : (currentStep === 'libraries' ? 'completed' : '')}`}>
             <div className="step-number">2</div>
             <span>Server Selection</span>
           </div>
@@ -171,7 +171,7 @@ const PlexSetup: React.FC<PlexSetupProps> = ({ onComplete, onError, apiBaseUrl }
             <PlexAuthCard
               onSuccess={handleAuthSuccess}
               onError={handleError}
-              apiBaseUrl={apiBaseUrl}
+              apiBaseUrl={apiBaseUrl || ''}
             />
           </div>
         )}
@@ -195,7 +195,7 @@ const PlexSetup: React.FC<PlexSetupProps> = ({ onComplete, onError, apiBaseUrl }
               authToken={authToken}
               onServerSelect={handleServerSelect}
               onError={handleError}
-              apiBaseUrl={apiBaseUrl}
+              apiBaseUrl={apiBaseUrl || ''}
             />
           </div>
         )}
@@ -216,13 +216,13 @@ const PlexSetup: React.FC<PlexSetupProps> = ({ onComplete, onError, apiBaseUrl }
               onLibrariesSelect={handleLibrariesSelect}
               onBack={goBack}
               onError={handleError}
-              apiBaseUrl={apiBaseUrl}
+              apiBaseUrl={apiBaseUrl || ''}
             />
           </div>
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .plex-setup {
           max-width: 1200px;
           margin: 0 auto;

@@ -113,7 +113,7 @@ const PlexServerDiscovery: React.FC<PlexServerDiscoveryProps> = ({
       setConnectionTests(prev => new Map(prev).set(testKey, {
         connected: response.data.connected,
         details: response.data.details,
-        error: response.data.error
+        error: response.data.error || ''
       }));
 
       return response.data.connected;
@@ -150,7 +150,7 @@ const PlexServerDiscovery: React.FC<PlexServerDiscoveryProps> = ({
       if (connection) return connection;
     }
 
-    return server.connections[0];
+    return server.connections[0] || null;
   };
 
   // Handle server selection
@@ -282,7 +282,7 @@ const PlexServerDiscovery: React.FC<PlexServerDiscoveryProps> = ({
         })}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .server-discovery {
           max-width: 800px;
           margin: 0 auto;

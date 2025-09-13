@@ -1,0 +1,259 @@
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Sidebar container */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: var(--sidebar-background, #1e1e1e);
+  border-right: 1px solid var(--sidebar-border, #333);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: width 0.3s ease, transform 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+  width: 64px;
+}
+
+/* Sidebar header */
+.sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--sidebar-border, #333);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.collapsed .logo-text {
+  display: none;
+}
+
+.collapse-toggle {
+  background: transparent;
+  border: none;
+  color: var(--sidebar-text, #ccc);
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collapse-toggle:hover {
+  background: var(--sidebar-hover, #333);
+}
+
+.collapsed .collapse-toggle {
+  margin: 0 auto;
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--sidebar-text, #ccc);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background: var(--sidebar-hover, #333);
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  background: var(--sidebar-active, #2c2c2c);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+.nav-icon {
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+.collapsed .nav-icon {
+  margin-right: 0;
+}
+
+.nav-label {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.collapsed .nav-label {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark theme variables */
+:root {
+  --sidebar-background: #1e1e1e;
+  --sidebar-border: #333;
+  --sidebar-text: #ccc;
+  --sidebar-hover: #333;
+  --sidebar-active: #2c2c2c;
+}
+
+/* Light theme override */
+[data-theme="light"] {
+  --sidebar-background: #f8f9fa;
+  --sidebar-border: #e9ecef;
+  --sidebar-text: #6c757d;
+  --sidebar-hover: #e9ecef;
+  --sidebar-active: #e3f2fd;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .mobile-overlay {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar.collapsed {
+    width: 280px;
+  }
+
+  .collapsed .logo-text,
+  .collapsed .nav-label {
+    opacity: 1;
+    width: auto;
+  }
+
+  .collapsed .nav-icon {
+    margin-right: 0.75rem;
+  }
+
+  .collapse-toggle {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .mobile-overlay {
+    display: none;
+  }
+
+  .sidebar {
+    position: static;
+    transform: none;
+  }
+}
+
+/* Tooltip for collapsed state */
+.collapsed .nav-link {
+  position: relative;
+}
+
+.collapsed .nav-link:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-text);
+  color: var(--color-background);
+  padding: 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1001;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  opacity: 0;
+  animation: tooltip-fade-in 0.2s ease forwards;
+}
+
+@keyframes tooltip-fade-in {
+  to {
+    opacity: 1;
+  }
+}
