@@ -40,13 +40,7 @@ export default function LoginForm() {
             Sign in to your account
           </h2>
           <p className="form-subtitle">
-            Or{' '}
-            <Link
-              to="/register"
-              className="form-link"
-            >
-              create a new account
-            </Link>
+            Welcome to Braidarr
           </p>
         </div>
         

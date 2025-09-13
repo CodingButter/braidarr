@@ -42,7 +42,6 @@ export default function Layout({ children }: LayoutProps) {
               ) : (
                 <div className="auth-links">
                   <Link to="/login" className="login-link">Login</Link>
-                  <Link to="/register" className="register-btn">Sign Up</Link>
                 </div>
               )}
             </div>

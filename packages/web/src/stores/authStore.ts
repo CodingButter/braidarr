@@ -27,20 +27,11 @@ interface AuthState {
 
   // Actions
   login: (email: string, password: string) => Promise<void>;
-  register: (data: RegisterData) => Promise<void>;
   logout: () => Promise<void>;
   refreshToken: () => Promise<void>;
   fetchCsrfToken: () => Promise<void>;
   clearError: () => void;
   setAccessToken: (token: string | null) => void;
-}
-
-interface RegisterData {
-  email: string;
-  username: string;
-  password: string;
-  firstName?: string;
-  lastName?: string;
 }
 
 // Add axios interceptors for token management
@@ -126,36 +117,7 @@ export const useAuthStore = create<AuthState>()(
         }
       },
 
-      register: async (data) => {
-        set({ isLoading: true, error: null });
-        try {
-          const response = await axios.post('/api/v1/auth/register', data);
-          
-          const { user, accessToken } = response.data;
-          
-          get().setAccessToken(accessToken);
-          
-          set({
-            user,
-            isAuthenticated: true,
-            isLoading: false,
-            error: null,
-          });
-
-          // Fetch CSRF token after successful registration
-          await get().fetchCsrfToken();
-        } catch (error) {
-          const axiosError = error as AxiosError<{ error: string }>;
-          set({
-            isLoading: false,
-            error: axiosError.response?.data?.error || 'Registration failed',
-            isAuthenticated: false,
-            user: null,
-            accessToken: null,
-          });
-          throw error;
-        }
-      },
+      // Registration removed - arr apps don't allow user registration
 
       logout: async () => {
         set({ isLoading: true });
